@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>first meeting date with month</title>
+  <title>Enter Passcode</title>
   <style>
     * {
       box-sizing: border-box;
@@ -94,9 +94,12 @@
 
     .title {
       color: #9f1239;
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 800;
       margin-bottom: 15px;
+      text-align: center;
+      max-width: 250px;
+      line-height: 1.3;
       text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
     }
 
@@ -148,167 +151,4 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .key-btn:active {
-      transform: scale(0.9);
-      background: #ffe4e6;
-    }
-
-    /* Next Button */
-    .next-btn {
-      background: #ffffff;
-      color: #be123c;
-      border: 2px solid #fda4af;
-      padding: 10px 42px;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      letter-spacing: 1px;
-      transition: all 0.2s ease;
-    }
-
-    .next-btn:hover {
-      background: #be123c;
-      color: #ffffff;
-    }
-
-    .next-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* Error Shake Animation */
-    .shake {
-      animation: shakeAnim 0.4s ease;
-    }
-
-    @keyframes shakeAnim {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-8px); }
-      40%, 80% { transform: translateX(8px); }
-    }
-
-    /* Responsive for Small Mobile Screens */
-    @media (max-width: 650px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .polaroid img {
-        width: 190px;
-        height: 190px;
-      }
-      .digit-box {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-      }
-      .key-btn {
-        width: 52px;
-        height: 52px;
-        font-size: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    
-    <!-- Left: Polaroid Photo -->
-    <div class="polaroid-wrapper">
-      <div class="ribbon">🎀</div>
-      <div class="polaroid">
-        <!-- Photo link yahan change karein -->
-        <img id="myPhoto" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500" alt="Special Memory">
-        <div class="caption">Forever & Always ✨</div>
-      </div>
-    </div>
-
-    <!-- Right: Keypad Area -->
-    <div class="keypad-section">
-      <div class="title">Enter a passcode</div>
-
-      <!-- 4 Digit Boxes -->
-      <div class="passcode-display" id="passcodeDisplay">
-        <div class="digit-box" id="d0"></div>
-        <div class="digit-box" id="d1"></div>
-        <div class="digit-box" id="d2"></div>
-        <div class="digit-box" id="d3"></div>
-      </div>
-
-      <!-- Dial Numbers -->
-      <div class="keypad-grid">
-        <button class="key-btn" onclick="pressKey('1')">1</button>
-        <button class="key-btn" onclick="pressKey('2')">2</button>
-        <button class="key-btn" onclick="pressKey('3')">3</button>
-        <button class="key-btn" onclick="pressKey('4')">4</button>
-        <button class="key-btn" onclick="pressKey('5')">5</button>
-        <button class="key-btn" onclick="pressKey('6')">6</button>
-        <button class="key-btn" onclick="pressKey('7')">7</button>
-        <button class="key-btn" onclick="pressKey('8')">8</button>
-        <button class="key-btn" onclick="pressKey('9')">9</button>
-        <button class="key-btn" onclick="clearLast()">⌫</button>
-        <button class="key-btn" onclick="pressKey('0')">0</button>
-        <button class="key-btn" onclick="clearAll()">C</button>
-      </div>
-
-      <!-- Submit Button -->
-      <button class="next-btn" onclick="checkPasscode()">NEXT</button>
-    </div>
-
-  </div>
-
-  <script>
-    // === YAHAN APNA 4 DIGIT PASSCODE SET KAREIN ===
-    const CORRECT_PASSCODE = "2442"; 
-
-    let enteredCode = "";
-
-    function updateDisplay() {
-      for (let i = 0; i < 4; i++) {
-        const box = document.getElementById("d" + i);
-        box.innerText = enteredCode[i] ? enteredCode[i] : "";
-      }
-    }
-
-    function pressKey(num) {
-      if (enteredCode.length < 4) {
-        enteredCode += num;
-        updateDisplay();
-      }
-    }
-
-    function clearLast() {
-      if (enteredCode.length > 0) {
-        enteredCode = enteredCode.slice(0, -1);
-        updateDisplay();
-      }
-    }
-
-    function clearAll() {
-      enteredCode = "";
-      updateDisplay();
-    }
-
-    function checkPasscode() {
-      const displayElem = document.getElementById("passcodeDisplay");
-
-      if (enteredCode === CORRECT_PASSCODE) {
-        // Correct Passcode hone par Page 2 par le jaye ya alert de
-        alert("Correct Passcode! 💖 Opening Page 2...");
-        // Jab Page 2 ban jayega to ye line un-comment kar sakte hain:
-        // window.location.href = "page2.html";
-      } else {
-        // Wrong passcode par shake animation
-        displayElem.classList.add("shake");
-        setTimeout(() => {
-          displayElem.classList.remove("shake");
-          clearAll();
-        }, 500);
-      }
-    }
-  </script>
-
-</body>
-</html>
+    .key-btn
