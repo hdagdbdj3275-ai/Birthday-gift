@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Special Moments</title>
+  <!-- Aesthetic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,54 +19,62 @@
 
     body {
       min-height: 100vh;
-      background: #faf4ee; /* Clean Single Warm Cream Background */
-      font-family: 'Georgia', 'Playfair Display', serif;
+      background: #faf4ee;
+      font-family: 'Playfair Display', Georgia, serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 24px 12px;
-      /* Cute aesthetic side borders */
+      padding: 30px 14px 40px 14px;
       border-left: 14px solid #8b1e3f;
       border-right: 14px solid #8b1e3f;
+      position: relative;
+    }
+
+    /* Fixed Aesthetic Corners */
+    .corner-decor-tl {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      line-height: 1;
+      z-index: 5;
+    }
+
+    .corner-decor-tr {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      line-height: 1;
+      z-index: 5;
     }
 
     .main-wrapper {
       width: 100%;
-      max-width: 440px;
+      max-width: 420px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
+      margin-top: 25px; /* Spacing so it doesn't overlap with bow & cherries */
     }
 
-    .corner-decor-tl {
-      position: fixed;
-      top: 14px;
-      left: 20px;
-      font-size: 22px;
-    }
-
-    .corner-decor-tr {
-      position: fixed;
-      top: 14px;
-      right: 20px;
-      font-size: 22px;
-    }
-
-    /* Heading exactly as requested */
+    /* Exact Text & Aesthetic Font */
     .main-title {
-      font-size: 22px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
       font-weight: 700;
-      color: #3e2723;
-      margin-bottom: 22px;
+      color: #5a192d;
+      margin-bottom: 28px;
       text-align: center;
-      letter-spacing: 0.5px;
+      padding: 0 10px;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px rgba(139, 30, 63, 0.1);
     }
 
     .envelope-group {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 32px;
       width: 100%;
       align-items: center;
     }
@@ -73,11 +86,11 @@
       text-decoration: none;
       width: 100%;
       max-width: 320px;
-      transition: transform 0.2s ease;
+      transition: transform 0.25s ease;
     }
 
     .envelope-item:hover {
-      transform: translateY(-3px) scale(1.02);
+      transform: translateY(-4px) scale(1.02);
     }
 
     .envelope-item:active {
@@ -85,11 +98,13 @@
     }
 
     .tap-text {
-      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
       color: #3e2723;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       letter-spacing: 0.5px;
+      font-style: italic;
     }
 
     .envelope-container {
@@ -101,22 +116,23 @@
     }
 
     .envelope-img {
-      width: 240px;
+      width: 250px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
     }
 
     .badge-pill {
       margin-top: -14px;
       background: #ffffff;
-      border: 1.5px solid #d7ccc8;
+      border: 1.5px solid #e2cbaf;
       border-radius: 20px;
-      padding: 5px 22px;
+      padding: 5px 24px;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #5d4037;
+      color: #6d4c41;
       box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       z-index: 2;
     }
@@ -124,6 +140,7 @@
 </head>
 <body>
 
+  <!-- Decorative elements positioned clearly in corners -->
   <div class="corner-decor-tl">🎀</div>
   <div class="corner-decor-tr">🍒</div>
 
