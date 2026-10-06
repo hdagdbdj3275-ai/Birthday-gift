@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Enter Passcode</title>
   <!-- Google Fonts: Cursive Script & Elegant Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,51 +15,268 @@
       margin: 0;
       padding: 0;
       user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
       min-height: 100vh;
       background-color: #faf4ee;
-      /* Page 2 wala drawn bows & cherries pattern */
+      /* Same aesthetic hand-drawn bow & cherries SVG pattern */
       background-image: 
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 100 100'%3E%3Cpath d='M42 48 C30 35, 12 38, 22 55 C30 65, 45 54, 48 50 M58 48 C70 35, 88 38, 78 55 C70 65, 55 54, 52 50 M44 55 Q35 75 32 82 M56 55 Q65 75 68 82' fill='none' stroke='%23d98296' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23d98296' opacity='0.4'/%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 100 100'%3E%3Cpath d='M55 20 Q50 38 35 52 M55 20 Q65 38 65 52 M45 23 Q52 16 65 24' fill='none' stroke='%238b1e3f' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3Ccircle cx='34' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3Ccircle cx='66' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 130px 130px, 160px 160px;
       background-position: 0 0, 70px 70px;
+      border-left: 12px solid #8b1e3f;
+      border-right: 12px solid #8b1e3f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 10px;
       font-family: 'Playfair Display', Georgia, serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 10px;
-      border-left: 14px solid #8b1e3f;
-      border-right: 14px solid #8b1e3f;
     }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 35px;
-      max-width: 900px;
+    .main-wrapper {
       width: 100%;
-    }
-
-    .polaroid-wrapper {
-      position: relative;
+      max-width: 330px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 12px;
     }
 
+    /* Compact Aesthetic Polaroid */
     .polaroid {
       background: #ffffff;
-      padding: 14px 14px 26px 14px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(139, 30, 63, 0.15);
-      border: 1.5px solid #ebd3da;
+      padding: 8px 8px 12px 8px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(139, 30, 63, 0.12);
+      border: 1px solid #ebd3da;
       text-align: center;
-      transform: rotate(-3deg);
-      transition: transform 0.3s ease;
+      transform: rotate(-1.5deg);
+      width: 155px;
     }
+
+    .polaroid img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .polaroid .caption {
+      margin-top: 6px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 18px;
+      font-weight: 700;
+      color: #6a1b29;
+      line-height: 1.1;
+    }
+
+    /* Compact Keypad Card */
+    .keypad-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 14px 14px 16px 14px;
+      border-radius: 20px;
+      box-shadow: 0 8px 22px rgba(139, 30, 63, 0.1);
+      border: 1.5px solid #f2cfd8;
+    }
+
+    .title-pill {
+      background: #faf4ee;
+      padding: 4px 14px;
+      border-radius: 16px;
+      border: 1px solid #ebd7d0;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      color: #6a1b29;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .passcode-display {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .digit-box {
+      width: 40px;
+      height: 40px;
+      background: #ffffff;
+      border: 2px solid #e8a4b3;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #8b1e3f;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .keypad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .key-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid #ebd3da;
+      color: #6a1b29;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(139, 30, 63, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.1s ease;
+    }
+
+    .key-btn:active {
+      transform: scale(0.92);
+      background: #fde8ed;
+    }
+
+    .next-btn {
+      background: #8b1e3f;
+      color: #ffffff;
+      border: none;
+      padding: 7px 36px;
+      border-radius: 25px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 22px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(139, 30, 63, 0.2);
+      letter-spacing: 0.5px;
+      transition: transform 0.15s ease;
+    }
+
+    .next-btn:active {
+      transform: scale(0.95);
+    }
+
+    .shake {
+      animation: shakeAnim 0.4s ease;
+    }
+
+    @keyframes shakeAnim {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-wrapper">
+    
+    <!-- Compact Polaroid Image -->
+    <div class="polaroid">
+      <img id="myPhoto" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500" alt="Special Memory">
+      <div class="caption">Forever & Always ✨</div>
+    </div>
+
+    <!-- Keypad Section -->
+    <div class="keypad-section">
+      <div class="title-pill">
+        <div class="title">First meeting date with month</div>
+      </div>
+
+      <div class="passcode-display" id="passcodeDisplay">
+        <div class="digit-box" id="d0"></div>
+        <div class="digit-box" id="d1"></div>
+        <div class="digit-box" id="d2"></div>
+        <div class="digit-box" id="d3"></div>
+      </div>
+
+      <div class="keypad-grid">
+        <button class="key-btn" onclick="pressKey('1')">1</button>
+        <button class="key-btn" onclick="pressKey('2')">2</button>
+        <button class="key-btn" onclick="pressKey('3')">3</button>
+        <button class="key-btn" onclick="pressKey('4')">4</button>
+        <button class="key-btn" onclick="pressKey('5')">5</button>
+        <button class="key-btn" onclick="pressKey('6')">6</button>
+        <button class="key-btn" onclick="pressKey('7')">7</button>
+        <button class="key-btn" onclick="pressKey('8')">8</button>
+        <button class="key-btn" onclick="pressKey('9')">9</button>
+        <button class="key-btn" onclick="clearLast()">⌫</button>
+        <button class="key-btn" onclick="pressKey('0')">0</button>
+        <button class="key-btn" onclick="clearAll()">C</button>
+      </div>
+
+      <button class="next-btn" onclick="checkPasscode()">Next</button>
+    </div>
+
+  </div>
+
+  <script>
+    const CORRECT_PASSCODE = "2812"; 
+    let enteredCode = "";
+
+    function updateDisplay() {
+      for (let i = 0; i < 4; i++) {
+        const box = document.getElementById("d" + i);
+        box.innerText = enteredCode[i] ? enteredCode[i] : "";
+      }
+    }
+
+    function pressKey(num) {
+      if (enteredCode.length < 4) {
+        enteredCode += num;
+        updateDisplay();
+      }
+    }
+
+    function clearLast() {
+      if (enteredCode.length > 0) {
+        enteredCode = enteredCode.slice(0, -1);
+        updateDisplay();
+      }
+    }
+
+    function clearAll() {
+      enteredCode = "";
+      updateDisplay();
+    }
+
+    function checkPasscode() {
+      const displayElem = document.getElementById("passcodeDisplay");
+
+      if (enteredCode === CORRECT_PASSCODE) {
+        window.location.href = "page2.html";
+      } else {
+        displayElem.classList.add("shake");
+        setTimeout(() => {
+          displayElem.classList.remove("shake");
+          clearAll();
+        }, 500);
+      }
+    }
+  </script>
+
+</body>
+</html>
