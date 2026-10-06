@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Special Moments</title>
-  <!-- Aesthetic Google Fonts -->
+  <!-- Google Fonts: Cursive Script & Elegant Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -19,34 +19,23 @@
 
     body {
       min-height: 100vh;
-      background: #faf4ee;
-      font-family: 'Playfair Display', Georgia, serif;
+      background-color: #faf4ee; /* Warm aesthetic beige base */
+      /* Seamless Drawn-style Bows & Cherries Background Pattern */
+      background-image: 
+        /* Hand-drawn aesthetic bow SVG */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 100 100'%3E%3Cpath d='M42 48 C30 35, 12 38, 22 55 C30 65, 45 54, 48 50 M58 48 C70 35, 88 38, 78 55 C70 65, 55 54, 52 50 M44 55 Q35 75 32 82 M56 55 Q65 75 68 82' fill='none' stroke='%23d98296' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23d98296' opacity='0.4'/%3E%3C/svg%3E"),
+        /* Hand-drawn aesthetic cherries SVG */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 100 100'%3E%3Cpath d='M55 20 Q50 38 35 52 M55 20 Q65 38 65 52 M45 23 Q52 16 65 24' fill='none' stroke='%238b1e3f' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3Ccircle cx='34' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3Ccircle cx='66' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 130px 130px, 160px 160px;
+      background-position: 0 0, 70px 70px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 14px 40px 14px;
+      padding: 30px 14px 45px 14px;
       border-left: 14px solid #8b1e3f;
       border-right: 14px solid #8b1e3f;
-      position: relative;
-    }
-
-    /* Fixed Aesthetic Corners */
-    .corner-decor-tl {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 24px;
-      line-height: 1;
-      z-index: 5;
-    }
-
-    .corner-decor-tr {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      line-height: 1;
-      z-index: 5;
+      font-family: 'Playfair Display', Georgia, serif;
     }
 
     .main-wrapper {
@@ -55,26 +44,35 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 25px; /* Spacing so it doesn't overlap with bow & cherries */
+      gap: 15px;
     }
 
-    /* Exact Text & Aesthetic Font */
+    /* Main Title with soft protective pill background */
+    .title-pill {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(4px);
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 1.5px solid #f2cfd8;
+      box-shadow: 0 4px 14px rgba(139, 30, 63, 0.08);
+      margin-bottom: 12px;
+      max-width: 95%;
+      text-align: center;
+    }
+
     .main-title {
       font-family: 'Dancing Script', cursive;
       font-size: 32px;
       font-weight: 700;
-      color: #5a192d;
-      margin-bottom: 28px;
-      text-align: center;
-      padding: 0 10px;
+      color: #6a1b29;
       line-height: 1.3;
-      text-shadow: 0 1px 2px rgba(139, 30, 63, 0.1);
+      letter-spacing: 0.5px;
     }
 
     .envelope-group {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 30px;
       width: 100%;
       align-items: center;
     }
@@ -97,14 +95,24 @@
       transform: scale(0.97);
     }
 
+    /* Tap to open text pill for clarity against pattern background */
+    .tap-pill {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(3px);
+      padding: 5px 18px;
+      border-radius: 20px;
+      border: 1px solid #ebd3da;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 8px;
+    }
+
     .tap-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      color: #3e2723;
-      font-weight: 600;
-      margin-bottom: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 24px;
+      color: #5c202a;
+      font-weight: 700;
       letter-spacing: 0.5px;
-      font-style: italic;
+      line-height: 1.2;
     }
 
     .envelope-container {
@@ -119,13 +127,13 @@
       width: 250px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12));
     }
 
     .badge-pill {
       margin-top: -14px;
       background: #ffffff;
-      border: 1.5px solid #e2cbaf;
+      border: 1.5px solid #e8d7ce;
       border-radius: 20px;
       padding: 5px 24px;
       font-family: 'Playfair Display', Georgia, serif;
@@ -133,26 +141,26 @@
       font-weight: 700;
       letter-spacing: 2px;
       color: #6d4c41;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
       z-index: 2;
     }
   </style>
 </head>
 <body>
 
-  <!-- Decorative elements positioned clearly in corners -->
-  <div class="corner-decor-tl">🎀</div>
-  <div class="corner-decor-tr">🍒</div>
-
   <div class="main-wrapper">
-    <!-- Exactly as requested in underscores -->
-    <h1 class="main-title">_My some special moment 🫣_</h1>
+    <!-- Cursive Heading with Clean Background Badge -->
+    <div class="title-pill">
+      <h1 class="main-title">_My some special moment 🫣_</h1>
+    </div>
 
     <div class="envelope-group">
       
       <!-- Envelope 1 -->
       <a href="envelope1.html" class="envelope-item">
-        <div class="tap-text">Tap to open</div>
+        <div class="tap-pill">
+          <div class="tap-text">Tap to open</div>
+        </div>
         <div class="envelope-container">
           <img class="envelope-img" src="envelope.png" alt="Envelope 1">
           <div class="badge-pill">LETTER 01</div>
@@ -161,7 +169,9 @@
 
       <!-- Envelope 2 -->
       <a href="envelope2.html" class="envelope-item">
-        <div class="tap-text">Tap to open</div>
+        <div class="tap-pill">
+          <div class="tap-text">Tap to open</div>
+        </div>
         <div class="envelope-container">
           <img class="envelope-img" src="envelope.png" alt="Envelope 2">
           <div class="badge-pill">LETTER 02</div>
@@ -170,7 +180,9 @@
 
       <!-- Envelope 3 -->
       <a href="envelope3.html" class="envelope-item">
-        <div class="tap-text">Tap to open</div>
+        <div class="tap-pill">
+          <div class="tap-text">Tap to open</div>
+        </div>
         <div class="envelope-container">
           <img class="envelope-img" src="envelope.png" alt="Envelope 3">
           <div class="badge-pill">LETTER 03</div>
