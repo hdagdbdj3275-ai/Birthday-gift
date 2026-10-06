@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letters For You</title>
+  <title>Three Letters</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,189 +14,164 @@
 
     body {
       min-height: 100vh;
-      background: #fce7ec; /* Soft Light Pink Aesthetic */
+      background: #fde8ed; /* Aesthetic Coquette Light Pink */
       font-family: 'Georgia', serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 24px 14px;
     }
 
-    /* Outer Card Box */
-    .card-container {
+    /* Outer White Card Container */
+    .container {
       background: #ffffff;
       width: 100%;
-      max-width: 480px;
-      border-radius: 20px;
-      padding: 28px 20px 32px 20px;
-      box-shadow: 0 12px 35px rgba(225, 112, 133, 0.22);
+      max-width: 440px;
+      border-radius: 24px;
+      padding: 30px 18px 36px 18px;
+      box-shadow: 0 10px 30px rgba(225, 112, 133, 0.2);
       border: 3px solid #ffccd5;
-      position: relative;
       text-align: center;
+      position: relative;
     }
 
-    /* Cute Corner Accents */
-    .corner-decor-tl {
+    .corner-bow-left {
       position: absolute;
-      top: 10px;
+      top: 12px;
       left: 14px;
-      font-size: 20px;
-      opacity: 0.8;
-    }
-    .corner-decor-tr {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-size: 20px;
-      opacity: 0.8;
+      font-size: 22px;
     }
 
-    .header-title {
+    .corner-bow-right {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 22px;
+    }
+
+    .title {
       font-size: 24px;
       font-weight: 700;
       color: #8b1e3f;
       letter-spacing: 0.5px;
-      margin-bottom: 22px;
-      margin-top: 5px;
+      margin-bottom: 24px;
       font-style: italic;
     }
 
-    /* Envelopes Column */
-    .envelopes-wrapper {
+    /* Vertical Column of 3 Envelopes */
+    .envelope-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 22px;
       align-items: center;
       width: 100%;
     }
 
-    /* Realistic Vintage Envelope Card */
-    .envelope-box {
+    .envelope-link {
+      display: block;
       width: 100%;
-      max-width: 380px;
-      height: 140px;
-      background: #f7eedf; /* Vintage cream paper tone */
-      border-radius: 12px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      max-width: 340px;
       text-decoration: none;
-      overflow: hidden;
-      border: 1px solid #ebd8be;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      cursor: pointer;
     }
 
-    .envelope-box:hover {
+    .envelope-link:hover {
       transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 12px 24px rgba(219, 75, 110, 0.2);
+      filter: drop-shadow(0 8px 16px rgba(219, 75, 110, 0.25));
     }
 
-    .envelope-box:active {
-      transform: scale(0.98);
+    .envelope-link:active {
+      transform: scale(0.97);
     }
 
-    /* Envelope Top Flap Simulation */
-    .envelope-flap {
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* Envelope Image Card */
+    .envelope-card {
+      position: relative;
       width: 100%;
-      height: 65px;
-      background: #f2e4d0;
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-      border-bottom: 1px solid #e2cbaf;
-      z-index: 1;
-    }
-
-    /* Wax Heart Seal */
-    .wax-seal {
-      position: absolute;
-      top: 52px;
-      width: 38px;
-      height: 38px;
-      background: radial-gradient(circle, #f472b6 0%, #db2777 85%, #9d174d 100%);
-      border-radius: 50%;
+      height: 160px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f7eedf;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff4cb;
-      font-size: 16px;
-      box-shadow: 0 4px 8px rgba(157, 23, 77, 0.35);
-      z-index: 2;
     }
 
-    .envelope-text {
+    /* Background image if uploaded as envelope.png */
+    .envelope-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text Overlay on Envelope */
+    .tap-text {
       position: absolute;
-      bottom: 16px;
-      font-size: 15px;
+      top: 28px;
+      font-size: 14px;
+      color: #634839;
       font-weight: 600;
-      color: #7c4a35;
       letter-spacing: 0.8px;
-      z-index: 2;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     }
 
-    .tag-number {
+    .envelope-number {
       position: absolute;
-      top: 10px;
-      left: 14px;
-      font-size: 11px;
-      font-weight: bold;
-      color: #a07a62;
+      bottom: 14px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      z-index: 2;
-    }
-
-    /* Bottom Subtext */
-    .footer-note {
-      margin-top: 24px;
-      font-size: 13px;
-      color: #a8727d;
-      letter-spacing: 0.5px;
+      font-weight: 700;
+      color: #8c5b46;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 3px 12px;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
 
-  <div class="card-container">
-    <div class="corner-decor-tl">🎀</div>
-    <div class="corner-decor-tr">🍒</div>
+  <div class="container">
+    <div class="corner-bow-left">🎀</div>
+    <div class="corner-bow-right">🍒</div>
 
-    <div class="header-title">Three letters for you</div>
+    <div class="title">Open when you're ready</div>
 
-    <div class="envelopes-wrapper">
-
+    <div class="envelope-list">
+      
       <!-- Envelope 1 -->
-      <a class="envelope-box" href="envelope1.html">
-        <div class="tag-number">Letter 01</div>
-        <div class="envelope-flap"></div>
-        <div class="wax-seal">🌙</div>
-        <div class="envelope-text">Tap to open</div>
+      <a href="envelope1.html" class="envelope-link">
+        <div class="envelope-card">
+          <!-- Agar aapne GitHub par envelope.png upload ki hai toh wahi yahan load hogi -->
+          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 1">
+          <div class="tap-text">Tap to open</div>
+          <div class="envelope-number">Letter 01</div>
+        </div>
       </a>
 
       <!-- Envelope 2 -->
-      <a class="envelope-box" href="envelope2.html">
-        <div class="tag-number">Letter 02</div>
-        <div class="envelope-flap"></div>
-        <div class="wax-seal">💖</div>
-        <div class="envelope-text">Tap to open</div>
+      <a href="envelope2.html" class="envelope-link">
+        <div class="envelope-card">
+          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 2">
+          <div class="tap-text">Tap to open</div>
+          <div class="envelope-number">Letter 02</div>
+        </div>
       </a>
 
       <!-- Envelope 3 -->
-      <a class="envelope-box" href="envelope3.html">
-        <div class="tag-number">Letter 03</div>
-        <div class="envelope-flap"></div>
-        <div class="wax-seal">✨</div>
-        <div class="envelope-text">Tap to open</div>
+      <a href="envelope3.html" class="envelope-link">
+        <div class="envelope-card">
+          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 3">
+          <div class="tap-text">Tap to open</div>
+          <div class="envelope-number">Letter 03</div>
+        </div>
       </a>
 
     </div>
-
-    <div class="footer-note">Choose one to read ✨</div>
   </div>
 
 </body>
