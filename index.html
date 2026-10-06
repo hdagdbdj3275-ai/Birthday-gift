@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enter Passcode</title>
+  <!-- Same Google Fonts as Page 2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,12 +19,21 @@
 
     body {
       min-height: 100vh;
-      background: #ffe4e9;
-      font-family: 'Comic Sans MS', 'Bubblegum Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #faf4ee; /* Same beige base */
+      /* Same aesthetic hand-drawn bow & cherries SVG pattern */
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 100 100'%3E%3Cpath d='M42 48 C30 35, 12 38, 22 55 C30 65, 45 54, 48 50 M58 48 C70 35, 88 38, 78 55 C70 65, 55 54, 52 50 M44 55 Q35 75 32 82 M56 55 Q65 75 68 82' fill='none' stroke='%23d98296' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23d98296' opacity='0.4'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 100 100'%3E%3Cpath d='M55 20 Q50 38 35 52 M55 20 Q65 38 65 52 M45 23 Q52 16 65 24' fill='none' stroke='%238b1e3f' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3Ccircle cx='34' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3Ccircle cx='66' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 130px 130px, 160px 160px;
+      background-position: 0 0, 70px 70px;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 10px;
+      padding: 30px 14px;
+      border-left: 14px solid #8b1e3f;
+      border-right: 14px solid #8b1e3f;
+      font-family: 'Playfair Display', Georgia, serif;
     }
 
     .container {
@@ -27,11 +41,12 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 35px;
-      max-width: 900px;
+      gap: 32px;
+      max-width: 860px;
       width: 100%;
     }
 
+    /* Aesthetic Polaroid Card */
     .polaroid-wrapper {
       position: relative;
       display: flex;
@@ -39,260 +54,6 @@
       align-items: center;
     }
 
-    .ribbon {
-      position: absolute;
-      top: -15px;
-      right: -10px;
-      font-size: 40px;
-      z-index: 10;
-      transform: rotate(15deg);
-    }
-
     .polaroid {
       background: #ffffff;
-      padding: 14px 14px 30px 14px;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(225, 112, 133, 0.25);
-      text-align: center;
-      transform: rotate(-3deg);
-      transition: transform 0.3s ease;
-    }
-
-    .polaroid:hover {
-      transform: rotate(0deg) scale(1.02);
-    }
-
-    .polaroid img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 4px;
-      display: block;
-    }
-
-    .polaroid .caption {
-      margin-top: 12px;
-      font-size: 15px;
-      color: #7d6b71;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    .keypad-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #ffccd5;
-      padding: 25px 22px;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(244, 63, 94, 0.15);
-      border: 3px solid #ffb3c1;
-    }
-
-    .title {
-      color: #9f1239;
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 15px;
-      text-align: center;
-      max-width: 250px;
-      line-height: 1.3;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-    }
-
-    .passcode-display {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-
-    .digit-box {
-      width: 52px;
-      height: 52px;
-      background: #ffffff;
-      border: 2.5px solid #fb7185;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 26px;
-      font-weight: bold;
-      color: #e11d48;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .keypad-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .key-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: none;
-      color: #be123c;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.15s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .key-btn:active {
-      transform: scale(0.9);
-      background: #ffe4e6;
-    }
-
-    .next-btn {
-      background: #ffffff;
-      color: #be123c;
-      border: 2px solid #fda4af;
-      padding: 10px 42px;
-      border-radius: 30px;
-      font-size: 18px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      letter-spacing: 1px;
-      transition: all 0.2s ease;
-    }
-
-    .next-btn:hover {
-      background: #be123c;
-      color: #ffffff;
-    }
-
-    .next-btn:active {
-      transform: scale(0.95);
-    }
-
-    .shake {
-      animation: shakeAnim 0.4s ease;
-    }
-
-    @keyframes shakeAnim {
-      0%, 100% { transform: translateX(0); }
-      20%, 60% { transform: translateX(-8px); }
-      40%, 80% { transform: translateX(8px); }
-    }
-
-    @media (max-width: 650px) {
-      .container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .polaroid img {
-        width: 190px;
-        height: 190px;
-      }
-      .digit-box {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-      }
-      .key-btn {
-        width: 52px;
-        height: 52px;
-        font-size: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    
-    <div class="polaroid-wrapper">
-      <div class="ribbon">🎀</div>
-      <div class="polaroid">
-        <img id="myPhoto" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500" alt="Special Memory">
-        <div class="caption">Forever & Always ✨</div>
-      </div>
-    </div>
-
-    <div class="keypad-section">
-      <div class="title">First meeting date with month</div>
-
-      <div class="passcode-display" id="passcodeDisplay">
-        <div class="digit-box" id="d0"></div>
-        <div class="digit-box" id="d1"></div>
-        <div class="digit-box" id="d2"></div>
-        <div class="digit-box" id="d3"></div>
-      </div>
-
-      <div class="keypad-grid">
-        <button class="key-btn" onclick="pressKey('1')">1</button>
-        <button class="key-btn" onclick="pressKey('2')">2</button>
-        <button class="key-btn" onclick="pressKey('3')">3</button>
-        <button class="key-btn" onclick="pressKey('4')">4</button>
-        <button class="key-btn" onclick="pressKey('5')">5</button>
-        <button class="key-btn" onclick="pressKey('6')">6</button>
-        <button class="key-btn" onclick="pressKey('7')">7</button>
-        <button class="key-btn" onclick="pressKey('8')">8</button>
-        <button class="key-btn" onclick="pressKey('9')">9</button>
-        <button class="key-btn" onclick="clearLast()">⌫</button>
-        <button class="key-btn" onclick="pressKey('0')">0</button>
-        <button class="key-btn" onclick="clearAll()">C</button>
-      </div>
-
-      <button class="next-btn" onclick="checkPasscode()">NEXT</button>
-    </div>
-
-  </div>
-
-  <script>
-    const CORRECT_PASSCODE = "2812"; 
-    let enteredCode = "";
-
-    function updateDisplay() {
-      for (let i = 0; i < 4; i++) {
-        const box = document.getElementById("d" + i);
-        box.innerText = enteredCode[i] ? enteredCode[i] : "";
-      }
-    }
-
-    function pressKey(num) {
-      if (enteredCode.length < 4) {
-        enteredCode += num;
-        updateDisplay();
-      }
-    }
-
-    function clearLast() {
-      if (enteredCode.length > 0) {
-        enteredCode = enteredCode.slice(0, -1);
-        updateDisplay();
-      }
-    }
-
-    function clearAll() {
-      enteredCode = "";
-      updateDisplay();
-    }
-
-    function checkPasscode() {
-      const displayElem = document.getElementById("passcodeDisplay");
-
-      if (enteredCode === CORRECT_PASSCODE) {
-        // Direct redirect to Page 2
-        window.location.href = "page2.html";
-      } else {
-        displayElem.classList.add("shake");
-        setTimeout(() => {
-          displayElem.classList.remove("shake");
-          clearAll();
-        }, 500);
-      }
-    }
-  </script>
-
-</body>
-</html>
+      padding: 14px 14px 2
