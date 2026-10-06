@@ -14,7 +14,7 @@
 
     body {
       min-height: 100vh;
-      background: #fde8ed; /* Aesthetic Coquette Light Pink */
+      background: #fde8ed;
       font-family: 'Georgia', serif;
       display: flex;
       flex-direction: column;
@@ -23,7 +23,6 @@
       padding: 24px 14px;
     }
 
-    /* Outer White Card Container */
     .container {
       background: #ffffff;
       width: 100%;
@@ -59,7 +58,6 @@
       font-style: italic;
     }
 
-    /* Vertical Column of 3 Envelopes */
     .envelope-list {
       display: flex;
       flex-direction: column;
@@ -86,7 +84,6 @@
       transform: scale(0.97);
     }
 
-    /* Envelope Image Card */
     .envelope-card {
       position: relative;
       width: 100%;
@@ -100,7 +97,6 @@
       align-items: center;
     }
 
-    /* Background image if uploaded as envelope.png */
     .envelope-img {
       width: 100%;
       height: 100%;
@@ -108,7 +104,6 @@
       display: block;
     }
 
-    /* Text Overlay on Envelope */
     .tap-text {
       position: absolute;
       top: 28px;
@@ -146,8 +141,7 @@
       <!-- Envelope 1 -->
       <a href="envelope1.html" class="envelope-link">
         <div class="envelope-card">
-          <!-- Agar aapne GitHub par envelope.png upload ki hai toh wahi yahan load hogi -->
-          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 1">
+          <img class="envelope-img" src="envelop.jpg" alt="Envelope 1">
           <div class="tap-text">Tap to open</div>
           <div class="envelope-number">Letter 01</div>
         </div>
@@ -156,7 +150,7 @@
       <!-- Envelope 2 -->
       <a href="envelope2.html" class="envelope-link">
         <div class="envelope-card">
-          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 2">
+          <img class="envelope-img" src="envelop.jpg" alt="Envelope 2">
           <div class="tap-text">Tap to open</div>
           <div class="envelope-number">Letter 02</div>
         </div>
@@ -165,7 +159,7 @@
       <!-- Envelope 3 -->
       <a href="envelope3.html" class="envelope-link">
         <div class="envelope-card">
-          <img class="envelope-img" src="envelope.png" onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600'" alt="Envelope 3">
+          <img class="envelope-img" src="envelop.jpg" alt="Envelope 3">
           <div class="tap-text">Tap to open</div>
           <div class="envelope-number">Letter 03</div>
         </div>
