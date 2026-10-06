@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enter Passcode</title>
-  <!-- Same Google Fonts as Page 2 -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
   <style>
@@ -19,31 +19,32 @@
 
     body {
       min-height: 100vh;
-      background-color: #faf4ee; /* Same beige base */
-      /* Same aesthetic hand-drawn bow & cherries SVG pattern */
+      background-color: #faf4ee;
+      /* Subtle spaced-out aesthetic background */
       background-image: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 100 100'%3E%3Cpath d='M42 48 C30 35, 12 38, 22 55 C30 65, 45 54, 48 50 M58 48 C70 35, 88 38, 78 55 C70 65, 55 54, 52 50 M44 55 Q35 75 32 82 M56 55 Q65 75 68 82' fill='none' stroke='%23d98296' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%23d98296' opacity='0.4'/%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 100 100'%3E%3Cpath d='M55 20 Q50 38 35 52 M55 20 Q65 38 65 52 M45 23 Q52 16 65 24' fill='none' stroke='%238b1e3f' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3Ccircle cx='34' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3Ccircle cx='66' cy='58' r='9' fill='%23c24b66' opacity='0.25' stroke='%238b1e3f' stroke-width='1.5'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Cpath d='M44 48 C34 38, 20 40, 26 52 C32 60, 44 52, 48 49 M56 48 C66 38, 80 40, 74 52 C68 60, 56 52, 52 49 M45 53 Q38 68 35 74 M55 53 Q62 68 65 74' fill='none' stroke='%23e8a4b3' stroke-width='2' stroke-linecap='round' opacity='0.35'/%3E%3Ccircle cx='50' cy='49' r='3' fill='%23e8a4b3' opacity='0.4'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 100 100'%3E%3Cpath d='M50 24 Q46 38 36 48 M50 24 Q56 38 64 48' fill='none' stroke='%238b1e3f' stroke-width='2' stroke-linecap='round' opacity='0.28'/%3E%3Ccircle cx='35' cy='52' r='7' fill='%23c24b66' opacity='0.22' stroke='%238b1e3f' stroke-width='1.5'/%3E%3Ccircle cx='65' cy='52' r='7' fill='%23c24b66' opacity='0.22' stroke='%238b1e3f' stroke-width='1.5'/%3E%3C/svg%3E");
       background-repeat: repeat;
-      background-size: 130px 130px, 160px 160px;
-      background-position: 0 0, 70px 70px;
+      background-size: 90px 90px, 140px 140px;
+      background-position: 0 0, 45px 45px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 30px 14px;
-      border-left: 14px solid #8b1e3f;
-      border-right: 14px solid #8b1e3f;
+      padding: 24px 12px;
+      border-left: 12px solid #8b1e3f;
+      border-right: 12px solid #8b1e3f;
       font-family: 'Playfair Display', Georgia, serif;
     }
 
     .container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 32px;
-      max-width: 860px;
+      gap: 22px;
       width: 100%;
+      max-width: 360px;
+      margin: auto 0;
     }
 
     /* Aesthetic Polaroid Card */
@@ -56,4 +57,78 @@
 
     .polaroid {
       background: #ffffff;
-      padding: 14px 14px 2
+      padding: 10px 10px 18px 10px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(139, 30, 63, 0.12);
+      border: 1px solid #ebd3da;
+      text-align: center;
+      transform: rotate(-1.5deg);
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .polaroid .caption {
+      margin-top: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+      font-weight: 700;
+      color: #6a1b29;
+    }
+
+    /* Keypad Section */
+    .keypad-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 18px 16px 20px 16px;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px rgba(139, 30, 63, 0.12);
+      border: 1.5px solid #f2cfd8;
+      width: 100%;
+      max-width: 310px;
+    }
+
+    .title-pill {
+      background: #faf4ee;
+      padding: 5px 14px;
+      border-radius: 16px;
+      border: 1px solid #ebd7d0;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      color: #6a1b29;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .passcode-display {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .digit-box {
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border: 2px solid #e8a4b3;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight:
