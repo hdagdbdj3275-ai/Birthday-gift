@@ -36,23 +36,32 @@
       overflow-x: hidden;
     }
 
-    /* Hand-drawn minimal doodle hearts */
+    /* Hand-drawn matching doodle hearts */
     .doodle-heart {
       position: absolute;
-      width: 14px;
-      height: 14px;
-      opacity: 0.55;
+      width: 13px;
+      height: 15px;
+      opacity: 0.75;
       pointer-events: none;
       z-index: 1;
     }
 
-    /* Organic scattered positions - only in upper letter zone */
-    .h1 { top: 38px; right: 28px; transform: rotate(14deg); }
-    .h2 { top: 95px; left: 24px; transform: rotate(-18deg); width: 12px; height: 12px; }
-    .h3 { top: 150px; right: 20px; transform: rotate(-8deg); width: 15px; height: 15px; }
-    .h4 { top: 220px; left: 32px; transform: rotate(12deg); width: 11px; height: 11px; }
-    .h5 { top: 290px; right: 35px; transform: rotate(20deg); width: 13px; height: 13px; }
-    .h6 { top: 340px; left: 26px; transform: rotate(-10deg); width: 14px; height: 14px; }
+    /* Natural organic placements matching the bottom illustration feel */
+    .h1  { top: 22px; right: 34px; transform: rotate(14deg); width: 12px; }
+    .h2  { top: 38px; left: 24px; transform: rotate(-18deg); width: 13px; }
+    .h3  { top: 80px; left: 16px; transform: rotate(10deg); width: 11px; }
+    .h4  { top: 92px; right: 22px; transform: rotate(-12deg); width: 13px; }
+    .h5  { top: 140px; right: 38px; transform: rotate(18deg); width: 14px; }
+    .h6  { top: 155px; left: 30px; transform: rotate(-15deg); width: 12px; }
+    .h7  { top: 205px; left: 14px; transform: rotate(8deg); width: 13px; }
+    .h8  { top: 220px; right: 28px; transform: rotate(-22deg); width: 12px; }
+    .h9  { top: 265px; left: 24px; transform: rotate(-10deg); width: 14px; }
+    .h10 { top: 280px; right: 18px; transform: rotate(15deg); width: 13px; }
+    .h11 { top: 330px; left: 36px; transform: rotate(20deg); width: 12px; }
+    .h12 { top: 345px; right: 32px; transform: rotate(-8deg); width: 14px; }
+    .h13 { top: 395px; left: 20px; transform: rotate(-16deg); width: 13px; }
+    .h14 { top: 410px; right: 24px; transform: rotate(12deg); width: 12px; }
+    .h15 { top: 460px; right: 40px; transform: rotate(-14deg); width: 13px; }
 
     .main-wrapper {
       width: 100%;
@@ -129,22 +138,36 @@
 </head>
 <body>
 
-  <!-- Reusable SVG definition for the same cute illustration heart -->
+  <!-- Reusable SVG definition crafted exactly like the bottom doodle art -->
   <svg style="display: none;">
     <defs>
       <g id="mini-heart">
-        <path d="M50 32 C42 16, 20 18, 20 38 C20 54, 40 68, 50 82 C60 68, 80 54, 80 38 C80 18, 58 16, 50 32 Z" fill="none" stroke="#ba6878" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M50 28 C42 12, 18 16, 18 36 C18 52, 38 68, 50 82 C62 68, 82 52, 82 36 C82 16, 58 12, 50 28 Z" 
+              fill="none" 
+              stroke="#c47279" 
+              stroke-width="5" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"/>
       </g>
     </defs>
   </svg>
 
-  <!-- Organic & minimal hearts placed naturally around letter space -->
+  <!-- 15 Organically scattered matching doodle hearts -->
   <svg class="doodle-heart h1" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
   <svg class="doodle-heart h2" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
   <svg class="doodle-heart h3" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
   <svg class="doodle-heart h4" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
   <svg class="doodle-heart h5" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
   <svg class="doodle-heart h6" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h7" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h8" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h9" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h10" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h11" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h12" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h13" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h14" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <svg class="doodle-heart h15" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
 
   <div class="main-wrapper">
     <a href="page2.html" class="back-btn">← Back to Letters</a>
