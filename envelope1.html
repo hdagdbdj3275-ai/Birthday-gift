@@ -36,32 +36,51 @@
       overflow-x: hidden;
     }
 
-    /* Hand-drawn matching doodle hearts */
-    .doodle-heart {
+    /* Vertical Floral Branches along green marked lines */
+    .flower-vine {
       position: absolute;
-      width: 13px;
-      height: 15px;
-      opacity: 0.75;
+      width: 440px;
       pointer-events: none;
       z-index: 1;
+      opacity: 0.88;
     }
 
-    /* Natural organic placements matching the bottom illustration feel */
-    .h1  { top: 22px; right: 34px; transform: rotate(14deg); width: 12px; }
-    .h2  { top: 38px; left: 24px; transform: rotate(-18deg); width: 13px; }
-    .h3  { top: 80px; left: 16px; transform: rotate(10deg); width: 11px; }
-    .h4  { top: 92px; right: 22px; transform: rotate(-12deg); width: 13px; }
-    .h5  { top: 140px; right: 38px; transform: rotate(18deg); width: 14px; }
-    .h6  { top: 155px; left: 30px; transform: rotate(-15deg); width: 12px; }
-    .h7  { top: 205px; left: 14px; transform: rotate(8deg); width: 13px; }
-    .h8  { top: 220px; right: 28px; transform: rotate(-22deg); width: 12px; }
-    .h9  { top: 265px; left: 24px; transform: rotate(-10deg); width: 14px; }
-    .h10 { top: 280px; right: 18px; transform: rotate(15deg); width: 13px; }
-    .h11 { top: 330px; left: 36px; transform: rotate(20deg); width: 12px; }
-    .h12 { top: 345px; right: 32px; transform: rotate(-8deg); width: 14px; }
-    .h13 { top: 395px; left: 20px; transform: rotate(-16deg); width: 13px; }
-    .h14 { top: 410px; right: 24px; transform: rotate(12deg); width: 12px; }
-    .h15 { top: 460px; right: 40px; transform: rotate(-14deg); width: 13px; }
+    .flower-left {
+      top: 250px;
+      left: -195px;
+      transform: rotate(90deg);
+    }
+
+    .flower-right {
+      top: 250px;
+      right: -195px;
+      transform: rotate(-90deg) scaleY(-1);
+    }
+
+    /* Organic scattered heart.png elements */
+    .png-heart {
+      position: absolute;
+      width: 20px;
+      height: auto;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+    }
+
+    .h1  { top: 28px; right: 28px; transform: rotate(12deg); width: 18px; }
+    .h2  { top: 46px; left: 24px; transform: rotate(-15deg); width: 22px; }
+    .h3  { top: 95px; left: 18px; transform: rotate(10deg); width: 17px; }
+    .h4  { top: 110px; right: 22px; transform: rotate(-20deg); width: 21px; }
+    .h5  { top: 160px; right: 35px; transform: rotate(15deg); width: 24px; }
+    .h6  { top: 180px; left: 28px; transform: rotate(-12deg); width: 19px; }
+    .h7  { top: 235px; left: 16px; transform: rotate(8deg); width: 22px; }
+    .h8  { top: 250px; right: 26px; transform: rotate(-18deg); width: 18px; }
+    .h9  { top: 305px; left: 26px; transform: rotate(-8deg); width: 23px; }
+    .h10 { top: 320px; right: 20px; transform: rotate(14deg); width: 20px; }
+    .h11 { top: 375px; left: 34px; transform: rotate(18deg); width: 18px; }
+    .h12 { top: 390px; right: 30px; transform: rotate(-10deg); width: 22px; }
+    .h13 { top: 440px; left: 22px; transform: rotate(-16deg); width: 21px; }
+    .h14 { top: 455px; right: 26px; transform: rotate(12deg); width: 19px; }
 
     .main-wrapper {
       width: 100%;
@@ -96,7 +115,7 @@
 
     .letter-body {
       width: 100%;
-      padding: 10px 6px;
+      padding: 10px 10px;
       text-align: center;
     }
 
@@ -138,36 +157,25 @@
 </head>
 <body>
 
-  <!-- Reusable SVG definition crafted exactly like the bottom doodle art -->
-  <svg style="display: none;">
-    <defs>
-      <g id="mini-heart">
-        <path d="M50 28 C42 12, 18 16, 18 36 C18 52, 38 68, 50 82 C62 68, 82 52, 82 36 C82 16, 58 12, 50 28 Z" 
-              fill="none" 
-              stroke="#c47279" 
-              stroke-width="5" 
-              stroke-linecap="round" 
-              stroke-linejoin="round"/>
-      </g>
-    </defs>
-  </svg>
+  <!-- Vertical Flower Vines on both sides -->
+  <img src="flower.png" alt="Flower Left" class="flower-vine flower-left">
+  <img src="flower.png" alt="Flower Right" class="flower-vine flower-right">
 
-  <!-- 15 Organically scattered matching doodle hearts -->
-  <svg class="doodle-heart h1" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h2" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h3" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h4" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h5" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h6" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h7" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h8" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h9" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h10" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h11" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h12" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h13" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h14" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
-  <svg class="doodle-heart h15" viewBox="0 0 100 100"><use href="#mini-heart"/></svg>
+  <!-- PNG Hearts scattered organically -->
+  <img src="heart.png" alt="Heart" class="png-heart h1">
+  <img src="heart.png" alt="Heart" class="png-heart h2">
+  <img src="heart.png" alt="Heart" class="png-heart h3">
+  <img src="heart.png" alt="Heart" class="png-heart h4">
+  <img src="heart.png" alt="Heart" class="png-heart h5">
+  <img src="heart.png" alt="Heart" class="png-heart h6">
+  <img src="heart.png" alt="Heart" class="png-heart h7">
+  <img src="heart.png" alt="Heart" class="png-heart h8">
+  <img src="heart.png" alt="Heart" class="png-heart h9">
+  <img src="heart.png" alt="Heart" class="png-heart h10">
+  <img src="heart.png" alt="Heart" class="png-heart h11">
+  <img src="heart.png" alt="Heart" class="png-heart h12">
+  <img src="heart.png" alt="Heart" class="png-heart h13">
+  <img src="heart.png" alt="Heart" class="png-heart h14">
 
   <div class="main-wrapper">
     <a href="page2.html" class="back-btn">← Back to Letters</a>
