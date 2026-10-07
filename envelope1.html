@@ -21,17 +21,17 @@
     body {
       min-height: 100vh;
       background-color: #f7eedf;
-      /* Background Image: Positioned at bottom center so art stays visible */
+      /* Background Image: Positioned at bottom center */
       background-image: url('letter1_bg.jpg');
       background-repeat: no-repeat;
       background-position: center bottom;
-      background-size: contain; /* Phone screen par poora illustration fit aayega */
+      background-size: contain;
       border-left: 14px solid #8b1e3f;
       border-right: 14px solid #8b1e3f;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 14px 220px 14px; /* Bottom padding keeps text away from the couple art */
+      padding: 24px 16px 200px 16px; /* Safe space above couple art */
       font-family: 'Playfair Display', Georgia, serif;
     }
 
@@ -65,21 +65,16 @@
       transform: scale(0.95);
     }
 
-    /* Elegant Soft Letter Container */
-    .letter-card {
+    /* Seamless Handwritten Letter Text (No Box / No Border) */
+    .letter-body {
       width: 100%;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(5px);
-      border-radius: 20px;
-      padding: 22px 18px 20px 18px;
-      border: 1.5px solid #f2cfd8;
-      box-shadow: 0 10px 25px rgba(139, 30, 63, 0.08);
+      padding: 10px 6px;
       text-align: center;
     }
 
     .letter-header {
       font-family: 'Dancing Script', cursive;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       color: #6a1b29;
       margin-bottom: 12px;
@@ -87,25 +82,27 @@
     }
 
     .divider {
-      width: 50px;
+      width: 45px;
       height: 2px;
-      background: #e8a4b3;
+      background: #c98292;
       margin: 0 auto 16px auto;
       border-radius: 2px;
+      opacity: 0.7;
     }
 
     .letter-content {
       font-family: 'Dancing Script', cursive;
-      font-size: 22px;
-      line-height: 1.6;
+      font-size: 23px;
+      line-height: 1.65;
       color: #4a2828;
       text-align: center;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
     }
 
     .signature {
-      margin-top: 16px;
+      margin-top: 18px;
       font-family: 'Dancing Script', cursive;
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 700;
       color: #8b1e3f;
     }
@@ -115,11 +112,11 @@
 
   <div class="main-wrapper">
     
-    <!-- Back to Envelope List -->
+    <!-- Back Button -->
     <a href="page2.html" class="back-btn">← Back to Letters</a>
 
-    <!-- Letter Note Box -->
-    <div class="letter-card">
+    <!-- Seamless Text directly over Background -->
+    <div class="letter-body">
       <div class="letter-header">_Our First Memory_</div>
       <div class="divider"></div>
       
